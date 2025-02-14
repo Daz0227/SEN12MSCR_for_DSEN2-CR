@@ -10,25 +10,7 @@ First, download the **SEN12MSCR dataset** from the following URL:
 
 ### 2. Place the Script in the SEN12MSCR Folder
 Once you have downloaded the dataset, place this Python preprocessing script (`SEN12MSCR_for_DSEN2-CR.py`) in the folder where the dataset is located (i.e., inside the `SEN12MSCR` folder).
-
-### 3. Run the Script
-Open a terminal and navigate to the `SEN12MSCR` folder. Then, run the preprocessing script by executing the following commands:
-
-```bash
-cd SEN12MSCR
-python SEN12MSCR_for_DSEN2-CR.py
-```
-
-This will initiate the preprocessing process, which will automatically:
-
-- Move files from subdirectories to the parent folder.
-- Rename files to remove unnecessary substrings (`_s1`, `_s2`, `_cloudy`).
-- Create the necessary folders (`s1`, `s2_cloudFree`, `s2_cloudy`).
-- Organize files into their respective folders based on their naming patterns.
-- Clean up any empty folders.
-- Generate a CSV file (`data.csv`) with the necessary metadata.
-
-### 4. Customizing Dataset Splits (Training/Validation/Testing)
+### 3. Customizing Dataset Splits (Training/Validation/Testing)
 
 The dataset is split based on the file names using regular expressions in the script. The default split can be adjusted by modifying the regular expressions in the script:
 
@@ -45,6 +27,22 @@ The dataset is split based on the file names using regular expressions in the sc
   This pattern defines the files that are part of the validation set.
 
 You can modify these regular expressions to adjust the dataset splits according to your needs. For instance, if you want to use different files for training and validation, you can update the patterns accordingly.
+### 4. Run the Script
+Open a terminal and navigate to the `SEN12MSCR` folder. Then, run the preprocessing script by executing the following commands:
+
+```bash
+cd SEN12MSCR
+python SEN12MSCR_for_DSEN2-CR.py
+```
+
+This will initiate the preprocessing process, which will automatically:
+
+- Move files from subdirectories to the parent folder.
+- Rename files to remove unnecessary substrings (`_s1`, `_s2`, `_cloudy`).
+- Create the necessary folders (`s1`, `s2_cloudFree`, `s2_cloudy`).
+- Organize files into their respective folders based on their naming patterns.
+- Clean up any empty folders.
+- Generate a CSV file (`data.csv`) with the necessary metadata.
 
 ### 5. Continue with DSEN2-CR Training
 
