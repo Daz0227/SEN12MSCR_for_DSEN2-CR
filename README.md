@@ -32,11 +32,11 @@ This will initiate the preprocessing process, which will automatically:
 
 The dataset is split based on the file names using regular expressions in the script. The default split can be adjusted by modifying the regular expressions in the script:
 
-- **Training set pattern**:
+- **Testing set pattern**:
   ```python
   pattern_test = re.compile(r'ROIs(1158_spring_(9|141)|1868_summer_(43|89|146)|1970_fall_(57|27|135)|2017_winter_(130|146|49))_p\d+\.tif')
   ```
-  This pattern defines the files that are part of the training set.
+  This pattern defines the files that are part of the testing set.
 
 - **Validation set pattern**:
   ```python
@@ -51,12 +51,3 @@ You can modify these regular expressions to adjust the dataset splits according 
 After running the preprocessing script, you can continue with the next steps outlined in the [**DSEN2-CR GitHub repository**](https://github.com/ameraner/dsen2-cr) to start training your model with the preprocessed SEN12MSCR dataset.
 
 The repository contains instructions on how to set up the training environment, configure parameters, and run the training process.
-
-## Summary of Script Features
-
-- **Moves files up**: Organizes files by moving them from subfolders to the parent folder.
-- **Renames files**: Cleans up file names by removing unnecessary substrings like `_s1`, `_s2`, and `_cloudy`.
-- **Creates target folders**: Automatically creates the `s1`, `s2_cloudFree`, and `s2_cloudy` folders.
-- **Organizes data**: Moves files into their respective folders based on file names and patterns.
-- **Deletes empty folders**: Removes any empty directories after processing the files.
-- **Generates CSV**: Creates a CSV file (`data.csv`) with metadata for each processed file, including the file's category.
